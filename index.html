@@ -2,17 +2,17 @@
 <html>
 <head>
     <Title>Etchasketch</Title>
-    <link  href="./style.css" type="text/css" rel="stylesheet">
+    <link href="./style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">    
 </head>
 
 <body>
-<div id ='gameContainer'>
+<div class ='gameContainer' id='gameContainer'>
     <div class='rightWheel'>
     </div>
     <div class='leftWheel'>
     </div>
-    <button id='resetButton'>Reset</button>
+    <button class='resetButton' id='resetButton'>Reset</button>
     <div class='gameTitle'>
         <h1>Magic Etch A Sketch</h1>
     </div>
@@ -21,7 +21,6 @@
 <script>
 
 document.getElementById('resetButton').addEventListener('click',() => { makeGrid()});
-//document.getElementsByClassName('grid').addEventListener('click', () => { colourGrid()});
 
 //draws the initial 16 x 16 grid
 var i = 0;
@@ -30,10 +29,14 @@ var i = 0;
     const grid = document.createElement('div');
     grid.classList.add('grid');
     gameGrid.appendChild(grid);
-  }
-
+    document.querySelectorAll('grid');
+    grid.addEventListener('mouseover', function(e) {
+    grid.classList.add('paint')
+});
+}
 
 //Functions--
+
 
 //resets the game and prompts the user for a numerical input for the size of the new grid.
 function makeGrid() {
@@ -47,6 +50,7 @@ function makeGrid() {
         while (elementRemove[0]) {
         elementRemove[0].parentNode.removeChild(elementRemove[0]);
         }
+
     var i = 0;
         for (i = 0; i < gridSize * gridSize; i++) {
             const gameGrid = document.querySelector('#gameContainer');
@@ -54,13 +58,12 @@ function makeGrid() {
             grid.classList.add('grid');
             gameGrid.appendChild(grid);
             document.body.style.setProperty('--gridSize', gridSize)
-        }
+            grid.addEventListener('mouseover', function(e) {
+            grid.classList.add('paint');
+        });
+    }
 }
 
-//colours the grid boxes on mouse hover
-function colourGrid() {
-
-}
 
 </script>
 
