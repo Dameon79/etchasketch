@@ -1,5 +1,6 @@
 :root {
     --gridSize: 16;
+    --paint: black;
 }
 
 
@@ -37,7 +38,7 @@
     height: 60px;
     width: 60px;
     border-radius: 100%;
-    background-color:grey;
+    background-color:rgb(255, 255, 255);
     right: 0;
     position: absolute;
     bottom: 0;
@@ -50,7 +51,7 @@
     height: 60px;
     width: 60px;
     border-radius: 100%;
-    background-color:grey;
+    background-color:rgb(255, 255, 255);
     left: 0;
     position: absolute;
     bottom: 0;
@@ -64,25 +65,49 @@
     font-family: 'Great Vibes';
     text-shadow: 1px 1px black;
     color: rgba(248, 187, 20, 0.836);
-    background-color:rgb(177, 9, 9);
+    background-color:rgb(14, 80, 223);
     width: 60px;
     border-radius: 5px;
     position: absolute;
     right: 0;
     margin-right: -67px;
-    border-color:rgb(117, 15, 15);
+    border-color:rgb(42, 8, 189);
     border-width: 2px;
     padding-top: 5px;
     padding-left: 5px;
 }
 
 .grid {
-    border-style: dotted;
-    border-color: rgb(248, 243, 243);
     border-width: 1px;
+    border-style: dotted;
     box-sizing: border-box;
+    border-color: rgb(199, 197, 197);
+    background-color: rgb(218, 212, 212);
 }
 
 .paint {
-    background-color: rgba(0, 0, 0);
+    background-color: var(--paint);
 }
+
+.eraser {
+    font-size: 22px;
+    font-family: 'Great Vibes';
+    text-shadow: 1px 1px black;
+    color: rgba(248, 187, 20, 0.836);
+    background-color:rgb(14, 80, 223);
+    width: 60px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    margin-right: -67px;
+    margin-top: 87px;
+    border-color:rgb(42, 8, 189);
+    border-width: 2px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-size: 100%;
+}
+
+img {
+    width: 105%;
+   }
